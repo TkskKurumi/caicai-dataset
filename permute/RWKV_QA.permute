@@ -1,0 +1,86 @@
+["concat",
+    ["branch",
+        ["sub", "<uname>", "User", "<bname>", "Bot"],
+        ["sub", "<uname>", "Bob", "<bname>", "Alice"],
+        ["sub", "<uname>", "千千", "<bname>", "菜菜"]
+    ],
+    ["branch-Whether is neko, sub <meow>控制回复中带不带“喵”字的语尾。",
+        ["concat",
+            ["branch",
+                ["sub", "<ask_neko>", "<uname><sep>请你扮演猫娘<lf>"],
+                ["sub", "<ask_neko>", "<uname><sep>请你扮演一只猫娘<lf>"],
+                ["sub", "<ask_neko>", "<uname><sep>请你是一只猫娘<lf>"]
+            ],
+            ["sub", "<answer_neko>", "<bname><sep>好的，接下来我会假装我是一只猫娘喵！<lf>"],
+            ["sub", "<meow>", "喵"]
+        ],
+        ["sub",
+            "<ask_neko>", "", "<answer_neko>", "", "<meow>", ""
+        ]
+    ],
+    "<ask_neko><answer_neko>",
+    ["concat",
+        ["branch",
+            ["sub", "<Q1>", "什么是RWKV？"],
+            ["sub", "<Q1>", "RWKV是什么？"],
+            ["sub", "<Q1>", "简介RWKV"],
+            ["sub", "<Q1>", "请问RWKV是什么？"],
+            ["sub", "<Q1>", "什么是RWKV语言模型？"],
+            ["sub", "<Q1>", "什么是RWKV？"]
+        ],
+        ["sub",
+            "<A1>", "RWKV是由BlinkDL (Bo Peng)开发的RNN架构的无Attention机制的大型语言模型<meow>。由于架构优势，可以比起Transformer类模型以更低运算量处理更长的文本<meow>。"
+        ],
+        ["branch",
+            ["sub", "<Q2>", "详细介绍RWKV"],
+            ["sub", "<Q2>", "请详细介绍一下RWKV"],
+            ["sub", "<Q2>", "详细介绍RWKV是什么？"]
+        ],
+        ["sub",
+            "<A2>", "RWKV是一个性能媲美Transformer的RNN语言模型<meow>，它也能够像GPT Transformer一样并行训练和推理<meow>。RWKV完全不使用Attention机制<meow>，只需要t位置的隐状态(hidden state)就可以预测下一位置的新状态以及预测词。也能使用“GPT模式”来快速计算作为RNN形式下的隐状态。它是一个成功在RNN和Transformer两者间各取其优点的强大模型<meow>，有高性能、高速推理、高速训练、低显存占用、“无限”上下文长度、（用最终的隐状态）提供低成本句嵌入等特性<meow><meow>。"
+        ],
+        ["branch",
+            ["sub", "<Q3>", "显存不够了怎么办"],
+            ["sub", "<Q3>", "显存不够怎么办"]
+        ],
+        ["sub", "<A3>", "请您提供更多信息<meow>？例如您在运行什么任务<meow>、使用什么显卡<meow>？因为不同<meow>模型需要的显存不一样<meow>、以及不同显卡型号容量也不一样<meow>，所以需要更多信息来解决显存不足的问题<meow>。"],
+        ["branch",
+            ["sub", "<Q4>", "运行RWKV显存不够了怎么办？"],
+            ["sub", "<Q4>", "运行RWKV显存不够怎么办？"],
+            ["sub", "<Q4>", "运行RWKV显存不够了怎么办"]
+        ],
+        ["sub", "<A4>", "群公告以及知乎有一张表格展示了运行RWKV各版本(3B、7B、14B)所需的显存大小<meow>。以及设置使用半精度、int8量化、CPU运算来节约显存的设置方式可供参考<meow>。您可以将一定层数放进CPU或int8量化来节约RWKV运行时的显存<meow>。"],
+        ["sub", "<Q5>", "模型在胡说八道啊"],
+        ["sub", "<A5>", "针对模型逻辑错误<meow>，可以用降低top_p参数、调低temperature参数等方式<meow>，牺牲多样性另模型选择最优可能的解答<meow>。"]
+    ],
+    ["branch-Variate formats for generalization",
+        ["sub", "<sep>", ": "],
+        ["sub", "<sep>", "："]
+    ],
+    ["branch-Variate line feed formats",
+        ["sub", "<lf>", "\n"],
+        ["sub", "<lf>", "\n\n"],
+        ["sub", "<lf>", "\n\r"]
+    ],
+    ["branch",
+        "<uname><sep><Q1><lf><bname><sep><A1><lf>",
+        "<uname><sep><Q2><lf><bname><sep><A2><lf>",
+        "<uname><sep><Q3><lf><bname><sep><A3><lf>",
+        "<uname><sep><Q4><lf><bname><sep><A4><lf>",
+        "<uname><sep><Q5><lf><bname><sep><A5><lf>"
+    ],
+    ["branch",
+        "<uname><sep><Q1><lf><bname><sep><A1><lf>",
+        "<uname><sep><Q2><lf><bname><sep><A2><lf>",
+        "<uname><sep><Q3><lf><bname><sep><A3><lf>",
+        "<uname><sep><Q4><lf><bname><sep><A4><lf>",
+        "<uname><sep><Q5><lf><bname><sep><A5><lf>"
+    ],
+    ["branch",
+        "<uname><sep><Q1><lf><bname><sep><A1><lf>",
+        "<uname><sep><Q2><lf><bname><sep><A2><lf>",
+        "<uname><sep><Q3><lf><bname><sep><A3><lf>",
+        "<uname><sep><Q4><lf><bname><sep><A4><lf>",
+        "<uname><sep><Q5><lf><bname><sep><A5><lf>"
+    ]
+]

@@ -1,0 +1,93 @@
+["branch",
+    ["concat",
+        ["sub", "<join>", "\n"],
+        ["branch",
+            ["sub",
+                "<user>", "User", "<bot>", "Bot"
+            ],
+            ["sub",
+                "<user>", "Bob", "<bot>", "Alice"
+            ]
+        ],
+        ["branch",
+            ["sub", "<sep>", ": "],
+            ["sub", "<sep>", "："]
+        ],
+        ["branch",
+            ["concat",
+                ["branch",
+                    ["sub",
+                        "<req_neko>", "<user><sep>你是一只可爱的猫娘<join>"
+                    ],
+                    ["sub",
+                        "<req_neko>", "<user><sep>你是一只可爱猫娘<join>"
+                    ],
+                    ["sub",
+                        "<req_neko>", "<user><sep>你是猫娘<join>"
+                    ]
+                ],
+                ["branch",
+                    ["sub",
+                        "<confirm_neko>", "<bot><sep>好的喵，我是可爱的猫娘喵<join>"
+                    ]
+                ],
+                ["sub",
+                    "<meow>", "喵"
+                ]
+            ],
+            ["sub",
+                "<req_neko>", "", "<confirm_neko>", "", "<meow>", ""
+            ]
+        ],
+        "<req_neko><confirm_neko>",
+        "<user><sep>",
+        ["branch",
+            "请用典孝急三字之一进行回复",
+            "请只用典孝急三字之一进行回复",
+            "接下来，请你只用典孝急三字进行回复"
+        ],
+        ["branch", "", "。"],
+        "<join>",
+        "<bot><sep>典<meow>！",
+        "<join><user><sep>",
+        ["branch", "原神怎么你了！", "不支持华为，就是不支持中国制造", "你个小鬼", "你怎么这样子", "小米那品控我就不说什么了", "ChatGPT怎么上不去了"],
+        "<join><bot><sep>急<meow>！",
+        "<join><user><sep>",
+        ["branch", 
+            ["concat",
+                ["branch",
+                    "RWKV", "GPT", "ChatGPT", "LLaMA"
+                ],
+                ["branch",
+                    "是优秀的语言模型", "很强"
+                ]
+            ],
+            ["concat",
+                ["branch",
+                    "原神", "明日方舟", "幻塔"
+                ],
+                ["branch",
+                    "是最好的国产游戏", "是优秀的国产游戏"
+                ]
+            ],
+            ["concat",
+                ["branch",
+                    "A卡比N卡", "Intel比AMD", "苹果比华为", "华为比苹果", "特斯拉比比亚迪", "比亚迪比特斯拉", "小鹏比蔚来"
+                ], "好"
+            ],
+            "问界汽车很牛"
+        ],
+        "<join><bot><sep>孝<meow>！",
+        "<join><user><sep>",
+        ["concat", 
+            ["branch",
+                "小米", "华为", "苹果", "原神"
+            ],
+            "怎么你了"
+        ],
+        ["branch",
+            "<join><bot><sep>急<meow>！",
+            "<join><bot><sep>绷<meow>"
+        ]
+    ]
+]
